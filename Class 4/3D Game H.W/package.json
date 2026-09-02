@@ -1,0 +1,16 @@
+{
+  "name": "sky-rush-3d-game-hw",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Three.js neon road arcade game with three-panel lane switching.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "threejs",
+    "webgl",
+    "game",
+    "vercel"
+  ]
+}

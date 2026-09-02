@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sky Rush — Flying Car Arcade</title>
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="hud" class="hidden">
+      <div class="brand">SKY <span>RUSH</span></div>
+      <div class="hud-card score-card"><small>COINS</small><strong id="score">000</strong><span id="best">BEST 000</span></div>
+      <div class="hud-card speed-card"><small>VELOCITY</small><strong><span id="speed">000</span><em> km/h</em></strong><div class="speed-bar"><i id="speed-fill"></i></div></div>
+      <div class="powerups"><div id="shield-indicator" class="power hidden">✦ SHIELD <b></b></div><div id="magnet-indicator" class="power hidden">◎ MAGNET <b></b></div><div id="boost-indicator" class="power hidden">➜ BOOST <b></b></div></div>
+      <button id="settings-button" class="settings-button" aria-label="Open settings">⚙ SETTINGS</button>
+      <div class="controls-hint"><kbd>W</kbd> accelerate &nbsp; <kbd>S</kbd> brake &nbsp; <kbd>A</kbd><kbd>D</kbd> change lane</div>
+    </div>
+
+    <section id="start-screen" class="screen">
+      <div class="panel start-panel">
+        <p class="eyebrow">ARCADE FLIGHT PROTOCOL</p>
+        <h1>SKY <span>RUSH</span></h1>
+        <p class="tagline">Own the night highway. Harvest the glow. Don’t touch the traffic.</p>
+        <div class="colour-row"><span>CAR COLOUR</span><div id="colours" role="group" aria-label="Car colour"></div></div>
+        <button id="launch" class="primary">LAUNCH RUN <i>→</i></button>
+        <p class="instructions">W / S to accelerate and brake<br>A / D changes one road panel per press</p>
+      </div>
+    </section>
+
+    <section id="settings-screen" class="screen hidden" aria-label="Game settings">
+      <div class="panel settings-panel">
+        <p class="eyebrow">RUN CONFIGURATION</p>
+        <h2>SET<span>TINGS</span></h2>
+        <p class="setting-note">Use A / D once to snap to the next road panel.</p>
+        <div class="setting-row"><span>SOUND EFFECTS</span><button id="audio-toggle" class="toggle" aria-pressed="true">ON</button></div>
+        <div class="setting-row"><span>MUSIC</span><button id="music-toggle" class="toggle" aria-pressed="true">ON</button></div>
+        <div class="setting-row"><span>VIBRATION</span><button id="vibration-toggle" class="toggle" aria-pressed="true">ON</button></div>
+        <button id="close-settings" class="primary">SAVE &amp; RETURN <i>✓</i></button>
+      </div>
+    </section>
+
+    <section id="game-over" class="screen hidden">
+      <div class="panel result-panel">
+        <p class="eyebrow danger">SIGNAL LOST</p>
+        <h2>RUN <span>OVER</span></h2>
+        <div class="final-score"><small>COINS COLLECTED</small><strong id="final-score">000</strong></div>
+        <p id="run-message" class="run-message"></p>
+        <button id="restart" class="primary">FLY AGAIN <i>↻</i></button>
+        <button id="menu" class="secondary">CHANGE VEHICLE</button>
+      </div>
+    </section>
+    <div id="loading">INITIALIZING SKYWAY...</div>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
